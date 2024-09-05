@@ -8,6 +8,10 @@
     <p>Herbs: {{ tincture.herbs }}</p>
     <p>Solvent: {{ tincture.solvent }}</p>
   </div>
+  <div class="card-action">
+    <a href="{% url 'tinctures_update' tincture.id %}">Edit</a>
+    <a href="{% url 'tinctures_delete' tincture.id %}">Delete</a>
+  </div> 
 </div>
 
 {% endblock %}

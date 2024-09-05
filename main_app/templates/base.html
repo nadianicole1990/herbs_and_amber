@@ -23,8 +23,9 @@
             </li>
           </ul>
           <ul class="right">
-            <li><a href="/about">About</a></li>
-            <li><a href="/tinctures">View All Tinctures</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="{% url 'index' %}">View All Tinctures</a></li>
+            <li><a href="{% url 'tincture_create' %}">Add a Tincture</a></li>
           </ul>
         </div>
       </nav>

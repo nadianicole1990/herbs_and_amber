@@ -5,12 +5,11 @@
 {% for tincture in tinctures %}
 
 <div class="card">
-  <div class="card-content">
-    <span class="card-title">{{ tincture.name }}</span>
-    <p>Herbs: {{ tincture.herbs }}</p>
-    <p>Solvent: {{ tincture.solvent }}</p>
-    <p>Process: {{ tincture.process }}</p>
-  </div>
+    <a href="{% url 'detail' tincture.id %}">
+        <div class="card-content">
+            <span class="card-title">{{ tincture.name }}</span>
+        </div>
+    </a>
 </div>
 
 {% endfor %} {% endblock %}

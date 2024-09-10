@@ -4,6 +4,8 @@ from . import views
 urlpatterns = [
     path('', views.home, name='home'),
     path('about/', views.about, name='about'),
+    path('supplies/', views.supplies, name='supplies'),
+    path('methods/', views.methods, name='methods'),
     path('tinctures/', views.tinctures_index, name='index'),
     path('tinctures/<int:tincture_id>/', views.tinctures_detail, name='detail'),
     path('tinctures/create/', views.TinctureCreate.as_view(), name='tincture_create'),

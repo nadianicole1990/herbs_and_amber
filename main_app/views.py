@@ -9,6 +9,12 @@ def home(request):
 def about(request):
     return render(request, 'about.html')
 
+def supplies(request):
+    return render(request, 'supplies.html')
+
+def methods(request):
+    return render(request, 'methods.html')
+
 def tinctures_index(request):
     tinctures = Tincture.objects.all()
     return render(request, 'tinctures/index.html', { 'tinctures': tinctures })

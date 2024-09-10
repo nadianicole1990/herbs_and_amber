@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from .models import Tincture
+from .models import Herb, Tincture
 
 # Create your views here.
 def home(request):
@@ -14,6 +14,14 @@ def supplies(request):
 
 def methods(request):
     return render(request, 'methods.html')
+
+def herbs_index(request):
+    herbs = Herb.objects.all()
+    return render(request, 'herbs/index.html', { 'herbs': herbs })
+
+def herbs_detail(request, herb_id):
+    herb = Herb.objects.get(id=herb_id)
+    return render(request, 'herbs/detail.html', { 'herb': herb })
 
 def tinctures_index(request):
     tinctures = Tincture.objects.all()

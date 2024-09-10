@@ -5,7 +5,6 @@
 <div class="card">
   <div class="card-content">
     <span class="card-title">{{ tincture.name }}</span>
-    <p>Herbs: {{ tincture.herbs }}</p>
     <p>Solvent: {{ tincture.solvent }}</p>
   </div>
   <div class="card-action">
@@ -13,5 +12,22 @@
     <a href="{% url 'tinctures_delete' tincture.id %}">Delete</a>
   </div> 
 </div>
+
+<hr />
+<div class="row">
+  <div class="col s6">
+    <h3>{{ tincture.name }} Herbs</h3>
+    {% if tincture.herbs.count %} {% for herb in tincture.herbs.all %}
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">
+          {{ herb.name }}
+        </span>
+      </div>
+    </div>
+    {% endfor %} {% else %}
+    <h5>No Herbs Yet</h5>
+    {% endif %}
+  </div>
 
 {% endblock %}

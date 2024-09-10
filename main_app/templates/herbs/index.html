@@ -1,0 +1,15 @@
+{% extends 'base.html' %} {% block content %}
+
+<h1>Herbal Ingredients</h1>
+
+{% for herb in herbs %}
+
+<div class="card">
+    <a href="{% url 'herbs_detail' herb.id %}">
+        <div class="card-content">
+            <span class="card-title">{{ herb.name }}</span>
+        </div>
+    </a>
+</div>
+
+{% endfor %} {% endblock %}

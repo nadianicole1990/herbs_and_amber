@@ -39,3 +39,14 @@ class Tincture(models.Model):
         
     def __str__(self):
         return self.name
+    
+class Batch(models.Model):
+    prep_date = models.DateField('prep date')
+    ready_date = models.DateField('ready date')
+    tincture = models.ForeignKey(Tincture, on_delete=models.CASCADE)
+    
+    def __str__(self):
+        return f"New Batch prepped on {self.prep_date}. To be strained and bottle on {self.ready_date}"
+    
+    class Meta:
+        ordering = ['-prep_date']

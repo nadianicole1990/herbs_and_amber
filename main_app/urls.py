@@ -13,4 +13,5 @@ urlpatterns = [
     path('tinctures/create/', views.TinctureCreate.as_view(), name='tincture_create'),
     path('tinctures/<int:pk>/update/', views.TinctureUpdate.as_view(), name='tinctures_update'),
     path('tinctures/<int:pk>/delete/', views.TinctureDelete.as_view(), name='tinctures_delete'),
+    path('tinctures/<int:tincture_id>/add_batch/', views.add_batch, name='add_batch'),
 ]

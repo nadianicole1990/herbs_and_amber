@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Herb, Tincture
+from .forms import BatchForm
 
 # Create your views here.
 def home(request):
@@ -29,7 +30,18 @@ def tinctures_index(request):
 
 def tinctures_detail(request, tincture_id):
     tincture = Tincture.objects.get(id=tincture_id)
-    return render(request, 'tinctures/detail.html', { 'tincture': tincture })
+    batch_form = BatchForm()
+    return render(request, 'tinctures/detail.html', {
+        'tincture': tincture, 'batch_form': batch_form
+    })
+    
+def add_batch(request, tincture_id):
+    form = BatchForm(request.POST)
+    if form.is_valid():
+        new_batch = form.save(commit=False)
+        new_batch.tincture_id = tincture_id
+        new_batch.save()
+    return redirect('detail', tincture_id=tincture_id)
 
 class TinctureCreate(CreateView):
     model = Tincture

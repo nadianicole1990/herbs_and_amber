@@ -3,20 +3,20 @@ from datetime import date
 
 # Create your models here.
 
-class Herb(models.Model):
-    
-    MATERIALS = (
-        ('L', 'Leaf'),
-        ('F', 'Flower'),
-        ('R', 'Root'),
-        ('B', 'Bark'),
-        ('E', 'Berry'),
-    )
+MATERIALS = (
+    ('L', 'Leaf'),
+    ('F', 'Flower'),
+    ('R', 'Root'),
+    ('B', 'Bark'),
+    ('E', 'Berry'),
+)
 
-    STATES = (
-        ('F', 'Fresh'),
-        ('D', 'Dried')
-    )
+STATES = (
+    ('F', 'Fresh'),
+    ('D', 'Dried')
+)
+
+class Herb(models.Model):
     
     name = models.CharField(max_length=100)
     material = models.CharField(

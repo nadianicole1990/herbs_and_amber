@@ -1,10 +1,5 @@
 from django.forms import ModelForm
-from .models import Herb, Batch
-
-class HerbForm(ModelForm):
-  class Meta:
-    model = Herb
-    fields = ['name', 'material', 'state', 'properties']
+from .models import Batch
 
 class BatchForm(ModelForm):
   class Meta:

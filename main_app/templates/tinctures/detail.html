@@ -1,6 +1,6 @@
 {% extends 'base.html' %} {% block content %}
 
-<h1>{{ tincture.name }}</h1>
+<h2>{{ tincture.name }}</h2>
 
 <div class="card">
   <div class="card-content">
@@ -13,27 +13,43 @@
   </div> 
 </div>
 
-<div class="col s6">
-  <table class="striped">
-    <thead>
-      <tr>
-        <th>Batches</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for batch in tincture.batch_set.all %}
+<div class="row">
+  <div class="col s6">
+    <h3>{{ tincture.name }} Herbs</h3>
+    {% if tincture.herbs.count %} {% for herb in tincture.herbs.all %}
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">
+          {{ herb.name }}
+        </span>
+      </div>
+    </div>
+    {% endfor %}
+    {% endif %}
+</div>
+
+<br/>
+
+<div>
+<table class="striped">
+  <thead>
+    <tr>
+      <th>Batches</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for batch in tincture.batch_set.all %}
       <tr>
         <td><strong>Prepped:</strong> {{ batch.prep_date }}</td>
         <td><strong>Ready:</strong> {{ batch.ready_date }}</td>
       </tr>
-      {% endfor %}
-    </tbody>
-  </table>
-  <form action="{% url 'add_batch' tincture.id %}" method="POST">
-    {% csrf_token %} {{ batch_form.as_p }}
-    <input type="submit" class="btn" value="Add Batch" />
-  </form>
-</div>
+    {% endfor %}
+  </tbody>
+</table>
+<form action="{% url 'add_batch' tincture.id %}" method="POST">
+  {% csrf_token %} {{ batch_form.as_p }}
+  <input type="submit" class="btn" value="Add Batch" />
+</form>
 </div>
 
 <script>

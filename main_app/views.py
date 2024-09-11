@@ -24,6 +24,20 @@ def herbs_detail(request, herb_id):
     herb = Herb.objects.get(id=herb_id)
     return render(request, 'herbs/detail.html', { 'herb': herb })
 
+class HerbCreate(CreateView):
+    model = Herb
+    fields = '__all__'
+    success_url = '/herbs/'
+    
+class HerbUpdate(UpdateView):
+    model = Herb
+    fields = ['material', 'state', 'properties']
+    success_url = '/herbs/'
+    
+class HerbDelete(DeleteView):
+    model = Herb
+    success_url = '/herbs/'
+
 def tinctures_index(request):
     tinctures = Tincture.objects.all()
     return render(request, 'tinctures/index.html', { 'tinctures': tinctures })
@@ -34,14 +48,6 @@ def tinctures_detail(request, tincture_id):
     return render(request, 'tinctures/detail.html', {
         'tincture': tincture, 'batch_form': batch_form
     })
-    
-def add_batch(request, tincture_id):
-    form = BatchForm(request.POST)
-    if form.is_valid():
-        new_batch = form.save(commit=False)
-        new_batch.tincture_id = tincture_id
-        new_batch.save()
-    return redirect('detail', tincture_id=tincture_id)
 
 class TinctureCreate(CreateView):
     model = Tincture
@@ -56,3 +62,11 @@ class TinctureUpdate(UpdateView):
 class TinctureDelete(DeleteView):
     model = Tincture
     success_url = '/tinctures/'
+    
+def add_batch(request, tincture_id):
+    form = BatchForm(request.POST)
+    if form.is_valid():
+        new_batch = form.save(commit=False)
+        new_batch.tincture_id = tincture_id
+        new_batch.save()
+    return redirect('detail', tincture_id=tincture_id)

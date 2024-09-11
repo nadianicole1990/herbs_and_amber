@@ -4,11 +4,14 @@
 
 <div class="card">
   <div class="card-content">
-    <span class="card-title">{{ herb.name }}</span>
+    <span class="card-title">{{ herb.get_state_display }} {{ herb.name }}</span>
     <p><strong>Type of Herbal Material:</strong> {{ herb.get_material_display }}</p>
-    <p><strong>State of Herb:</strong> {{ herb.get_state_display }}</p>
     <p><strong>Properties:</strong> {{ herb.properties }}</p>
   </div>
-</div>
+  <div class="card-action">
+    <a href="{% url 'herbs_update' herb.id %}">Edit</a>
+    <a href="{% url 'herbs_delete' herb.id %}">Delete</a>
+  </div>
+</div> 
 
 {% endblock %}

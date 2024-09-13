@@ -1,11 +1,11 @@
-{% extends 'base.html' %} {% block content %} {% load static %}
+{% extends 'base.html' %} {% block content %}
 
 <h2>{{ tincture.name }}</h2>
 
 <div class="card">
   <div class="card-content">
     <span class="card-title">{{ tincture.name }}</span>
-    <img src="{% static '{{tincture.image}}' %}" alt="{{ tincture.name }}">
+    <img src="{{ tincture.image }}" alt="{{ tincture.name }}">
     <p>Solvent: {{ tincture.solvent }}</p>
   </div>
   <div class="card-action">

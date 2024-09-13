@@ -38,7 +38,7 @@ class Tincture(models.Model):
     name = models.CharField(max_length=100)
     solvent = models.CharField(max_length=100)
     herbs = models.ManyToManyField(Herb)
-    image = models.CharField(max_length=100, default='Default.JPG')
+    image = models.CharField(max_length=100, default='https://i.postimg.cc/T3hVGrk7/Default.jpg')
         
     def __str__(self):
         return self.name

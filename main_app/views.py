@@ -56,7 +56,7 @@ class TinctureCreate(CreateView):
     
 class TinctureUpdate(UpdateView):
     model = Tincture
-    fields = ['herbs', 'solvent']
+    fields = ['herbs', 'solvent', 'image']
     success_url = '/tinctures/'
     
 class TinctureDelete(DeleteView):

@@ -38,6 +38,7 @@ class Tincture(models.Model):
     name = models.CharField(max_length=100)
     solvent = models.CharField(max_length=100)
     herbs = models.ManyToManyField(Herb)
+    image = models.CharField(max_length=100, default='Default.JPG')
         
     def __str__(self):
         return self.name
@@ -48,7 +49,7 @@ class Batch(models.Model):
     tincture = models.ForeignKey(Tincture, on_delete=models.CASCADE)
     
     def __str__(self):
-        return f"New Batch prepped on {self.prep_date}. To be strained and bottle on {self.ready_date}"
+        return f"New Batch prepped on {self.prep_date}. To be strained and bottled on {self.ready_date}"
     
     class Meta:
         ordering = ['-prep_date']

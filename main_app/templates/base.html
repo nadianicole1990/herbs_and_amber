@@ -12,6 +12,8 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script>
       document.addEventListener('DOMContentLoaded', function() {
@@ -39,9 +41,20 @@
         </div>
       </nav>
     </header>
+    <div class="fixed-action-btn">
+      <a class="btn-floating btn-large green lighten-3">
+        <i class="large material-icons">&</i>
+      </a>
+      <ul>
+        <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
+        <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
+        <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
+        <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
+      </ul>
+    </div>
     <main class="container">{% block content %} {% endblock %}</main>
     <footer class="page-footer #d1c4e9 deep-purple lighten-4">
-      <div class="right">
+      <div class="center">
         All Rights Reserved, &copy; 2024 Herbs & Amber &nbsp;
       </div>
     </footer>

@@ -21,11 +21,17 @@
         var instances = M.FormSelect.init(elems);
       });
     </script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.fixed-action-btn');
+        var instances = M.FloatingActionButton.init(elems, options);
+      });
+    </script>
   </head>
   <body>
     <header class="navbar-fixed">
       <nav>
-        <div class="nav-wrapper #d1c4e9 deep-purple lighten-4">
+        <div class="nav-wrapper #d1c4e9 deep-purple lighten-3">
           <ul>
             <li>
               <a href="/" class="left brand-logo">&nbsp;&nbsp;Herbs & Amber</a>
@@ -53,7 +59,7 @@
       </ul>
     </div>
     <main class="container">{% block content %} {% endblock %}</main>
-    <footer class="page-footer #d1c4e9 deep-purple lighten-4">
+    <footer class="page-footer #d1c4e9 deep-purple lighten-3">
       <div class="center">
         All Rights Reserved, &copy; 2024 Herbs & Amber &nbsp;
       </div>

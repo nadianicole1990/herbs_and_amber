@@ -1,5 +1,21 @@
 {% extends 'base.html' %} {% block content %}
 
+<style>
+    .card { width:800px;}
+    
+    @media only screen
+    and (max-width : 450x) {
+    .card { width:100px;}
+    }
+    
+    @media only screen
+    and (max-width : 900px) {
+    .card { width:400px;}
+    }
+    
+    img { width:300px }
+    </style>
+
 <h3>My Tinctures</h3>
 
 {% for tincture in tinctures %}

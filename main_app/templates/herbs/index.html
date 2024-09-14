@@ -1,15 +1,42 @@
 {% extends 'base.html' %} {% block content %}
 
-<h1>Herbal Ingredients</h1>
+<style>
+.card { width:800px;}
+
+@media only screen
+and (max-width : 450x) {
+.card { width:100px;}
+}
+
+@media only screen
+and (max-width : 900px) {
+.card { width:400px;}
+}
+
+img { width:300px }
+</style>
+
+<h3>Herbal Ingredients</h3>
 
 {% for herb in herbs %}
 
 <div class="card hoverable">
-    <a href="{% url 'herbs_detail' herb.id %}">
-        <div class="card-content">
-            <span class="card-title">{{ herb.get_state_display }} {{ herb.name }}</span>
-        </div>
-    </a>
+    <div class="card-image waves-effect waves-block waves-light">
+        <img class="activator" src="{{ herb.image }}"/>
+    </div>
+    <div class="card-content activator grey-text text-darken-4">
+        <span class="card-title">
+            <a href="{% url 'herbs_detail' herb.id %}">{{ herb.get_state_display }} {{ herb.name }}</a>
+            <i class="material-icons right">more_vert</i>
+        </span>
+    </div>
+    <div class="card-reveal">
+        <span class="card-title grey-text text-darken-4">
+            Content
+            <i class="material-icons right">close</i>
+        </span>
+        <p>More</p>
+    </div>
 </div>
 
 {% endfor %}
@@ -17,7 +44,9 @@
 <div class="card hoverable">
     <a href="{% url 'herb_create' %}">
         <div class="card-content">
-            <span class="card-title">ADD HERB</span>
+            <span class="card-title">
+                ADD HERB
+            </span>
         </div>
     </a>
 </div>

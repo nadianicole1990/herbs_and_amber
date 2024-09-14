@@ -30,6 +30,7 @@ class Herb(models.Model):
         default=STATES[0][0]
     )
     properties = models.TextField(max_length=500)
+    image = models.CharField(max_length=100, default='https://i.postimg.cc/0NQ0ty2L/65411-E92-1783-46-D3-907-F-7-FA037834-E9-E.jpg')
         
     def __str__(self):
         return self.name

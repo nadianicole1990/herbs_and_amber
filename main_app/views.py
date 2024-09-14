@@ -31,7 +31,7 @@ class HerbCreate(CreateView):
     
 class HerbUpdate(UpdateView):
     model = Herb
-    fields = ['material', 'state', 'properties']
+    fields = ['material', 'state', 'properties', 'image']
     success_url = '/herbs/'
     
 class HerbDelete(DeleteView):

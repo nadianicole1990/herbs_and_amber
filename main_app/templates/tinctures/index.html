@@ -4,23 +4,25 @@
 
 {% for tincture in tinctures %}
 
-<div class="card">
+<div class="card hoverable">
     <a href="{% url 'detail' tincture.id %}">
         <div class="card-content">
             <span class="card-title">{{ tincture.name }}</span>
         </div>
     </a>
 </div>
+</div>
 
 {% endfor %}
 
-<div class="card">
+<div class="card hoverable">
     <a href="{% url 'tincture_create' %}">
         <div class="card-content">
             <img src="https://i.postimg.cc/T3hVGrk7/Default.jpg" alt="Empty Tincture Bottle">
             <span class="card-title">ADD TINCTURE</span>
         </div>
     </a>
+</div>
 </div>
 
 {% endblock %}

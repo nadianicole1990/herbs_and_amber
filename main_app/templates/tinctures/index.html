@@ -24,15 +24,15 @@
 {% for tincture in tinctures %}
 
 <div class="card hoverable">
+    <a href="{% url 'detail' tincture.id %}">
     <div class="card-image waves-effect waves-block waves-light">
         <img class="activator" src="{{ tincture.image }}" alt="{{ tincture.name }}"/>
     </div>
-    <a href="{% url 'detail' tincture.id %}">
         <div class="card-content">
             <span class="card-title">{{ tincture.name }}</span>
         </div>
-    </a>
 </div>
+</a>
 </div>
 
 {% endfor %}

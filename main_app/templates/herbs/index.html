@@ -10,7 +10,7 @@
 
 @media only screen
 and (max-width : 1600px) {
-.card { width: 300px;}
+.card { width: 250px;}
 }
 
 </style>
@@ -31,12 +31,12 @@ and (max-width : 1600px) {
     </div>
     <div class="card-reveal">
         <span class="card-title grey-text text-darken-4">
-            <span class="card-title">{{ herb.get_state_display }} {{ herb.name }}</span>
+            <span class="card-title">{{ herb.name }}</span>
             <i class="material-icons right">close</i>
         </span>
         <div class="card-content">
-            <p><strong>Type of Herbal Material:</strong> {{ herb.get_material_display }}</p>
-            <p><strong>Properties:</strong> {{ herb.properties }}</p>
+            <p><strong>Type:</strong> {{ herb.get_material_display }}</p>
+            <p><strong>State:</strong> {{ herb.get_state_display }}</p>
           </div>
     </div>
 </div>

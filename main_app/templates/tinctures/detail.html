@@ -30,7 +30,7 @@
       <a href="{% url 'herbs_detail' herb.id %}">
       <div class="card-content">
         <span class="card-title">
-          {{ herb.name }}
+          {{ herb.get_state_display }} {{ herb.name }}
         </span>
       </div>
       </a>

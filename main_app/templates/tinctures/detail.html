@@ -26,7 +26,7 @@
   <div class="col s3">
     <h3>{{ tincture.name }} Herbs</h3>
     {% if tincture.herbs.count %} {% for herb in tincture.herbs.all %}
-    <div class="card">
+    <div class="card hoverable">
       <a href="{% url 'herbs_detail' herb.id %}">
       <div class="card-content">
         <span class="card-title">

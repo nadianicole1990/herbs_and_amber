@@ -53,7 +53,8 @@ A guide to making tinctures, written for the purpose of being migrated to Azure 
 
 ## <a name="nextsteps"></a>Project Next Steps
 * User Authorization
-* 
+* Links to Purchase Materials
+* Methods
 
 ## <a name="deployment"></a>Deployed Link
 
